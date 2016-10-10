@@ -1,0 +1,40 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>Ajax with JSON</title>
+        <script>
+              window.addEventListener('load',init, false);
+              function init(e) {
+                  document.getElementById('myButton').addEventListener('click', documentLoader, false);
+              }
+            function reqListener (){
+                var car = JSON.parse(this.responseText);
+                
+                document.getElementById('car_make').innerHTML = car.car_make;
+                document.getElementById('car_model').innerHTML = car.car_model;
+                document.getElementById('year').innerHTML = car.year;
+            }
+            function documentLoader (){
+                var aReq = new XMLHttpRequest();
+                aReq.onload = reqListener;
+                aReq.open("GET", "ajax.json", true);
+                aReq.send();
+            }
+        </script>
+    </head>
+    <body>
+
+        <form id="carForm"> 
+            <button id="myButton" type="button">Click Here!</button>
+        </form>
+        <h1>Car Make</h1>
+        <div id="car_make"></div>
+        <h2>Model</h2>
+        <div id="car_model"></div>
+        <h2>Year</h2>
+        <div id="year"></div>
+          
+    </body>
+</html>
+
+

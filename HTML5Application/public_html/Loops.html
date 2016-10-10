@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<title>Loops</title>
+
+
+
+<style>
+
+ </style>
+ </head>
+
+ <body>
+    
+    
+    <form name="musicForm">
+  <p>
+    <label for="musicians">Choose some musicians, then click the button below:  Hint: To select multiple hold ctrl while selecting. </label>
+    <select id="musicians" name="musicians" multiple="multiple">
+      <option selected="selected">LDS Musicians</option>
+      <option>Mormon Tabernacle Choir</option>
+      <option>Piano Guys</option>
+      <option>David Archuleta</option>
+      <option>Lindsey Sterling</option>
+      <option>Neon Trees</option>
+      <option>Diamond Rio</option>
+      <option>Hilary Weeks</option>
+      <option>Gladys Knight</option>
+    </select>
+  </p>
+  <p><input id="hmc" type="button" value="How many are chosen?" /></p>
+</form>
+
+<script>
+function whichOnes(selectObject) {
+  var numberChosen = 0;
+  for (var i = 0; i < selectObject.options.length; i++) {
+    if (selectObject.options[i].selected) {
+      numberChosen++;
+    }
+  }
+  return numberChosen;
+}
+
+var hmc = document.getElementById("hmc");
+hmc.addEventListener("click", function(){
+  alert('Number of options chosen: ' + whichOnes(document.musicForm.musicians))
+});
+</script>
+ </body>
+ </html>
+
