@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Conditional Statements</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p> If you click the button you will get a clothing related message.</p>
+        <button onclick="jacket()"> Click Me Now!!!</button>
+        <p id ="Clothing"></p>
+        <script>
+            function jacket(){
+                var hour = new Date().getHours();
+                var clothing;
+        if (hour < 15) {
+        clothing = "T-shirt and Jeans";
+        }else{
+            clothing = "Put on a jacket";
+        }
+        document.getElementById("Clothing").innerHTML = clothing;
+    }
+        </script>
+    </body>
+</html>
