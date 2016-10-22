@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Local Storage API</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            if (window.localStorage){
+                var textuser = document.getElementById('name');
+                var textemail = document.getElementById('email');
+                
+                textuser.value = localStorage.getItem('name');
+                textemail.value = localStorage.getItem('email');
+                
+                textuser.addEventListener('input', function(){
+                    localStorage.setItem('name', textuser.value);
+                }, false);
+                
+                textemail.addEventListener('input', function(){
+                    localStorage.setItem('email', textemail.value);
+                }, false);
+            }
+        </script>
+        
+        <form id="form">
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" /><br>
+            <label for="email">Email: </label>
+            <input type="text" id="email" name="email"/> <br>
+            <input type="submit"/>
+        </form>
+    </body>
+</html>
