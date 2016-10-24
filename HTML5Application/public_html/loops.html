@@ -1,52 +1,45 @@
-<!doctype html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en-us">
 <head>
-<title>Loops</title>
-
-
+<meta charset="utf-8">
+<title>Adding Even Numbers of a Given Integer</title>
+<link href='https://fonts.googleapis.com/css?family=Itim' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Macondo+Swash+Caps' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Ruthie' rel='stylesheet' type='text/css'>
 
 <style>
+body {background-color:aqua;font-family: 'Macondo Swash Caps', cursive;text-align:center;}
+p {font-family:'Itim', cursive;text-align:center;color: black;font-size:200%;}
+input {text-align:center}
+button {text-align:center}
+</style>
+<script type="text/javascript">
+/* Input: A number
+* Processing: calculate the numbers between 0 and the number
+* Output: addtion of all even numbers up to and including the user's number
+*/
+function countNumbers(){
+	var even = 0;
+	var i = 0;
+	var n = parseFloat(document.getElementById('inputBox').value);
 
- </style>
- </head>
-
- <body>
-    
-    
-    <form name="musicForm">
-  <p>
-    <label for="musicians">Choose some musicians, then click the button below:  Hint: To select multiple hold ctrl while selecting. </label>
-    <select id="musicians" name="musicians" multiple="multiple">
-      <option selected="selected">LDS Musicians</option>
-      <option>Mormon Tabernacle Choir</option>
-      <option>Piano Guys</option>
-      <option>David Archuleta</option>
-      <option>Lindsey Sterling</option>
-      <option>Neon Trees</option>
-      <option>Diamond Rio</option>
-      <option>Hilary Weeks</option>
-      <option>Gladys Knight</option>
-    </select>
-  </p>
-  <p><input id="hmc" type="button" value="How many are chosen?" /></p>
-</form>
-
-<script>
-function whichOnes(selectObject) {
-  var numberChosen = 0;
-  for (var i = 0; i < selectObject.options.length; i++) {
-    if (selectObject.options[i].selected) {
-      numberChosen++;
-    }
-  }
-  return numberChosen;
+	while (i < n){
+		i++;
+	if (i%2 == 0){
+		 even = even + i; 
+	}
+	}
+	document.getElementById("output").innerHTML =  " Adding all of the even numbers up to your number resulted in " + even;
 }
-
-var hmc = document.getElementById("hmc");
-hmc.addEventListener("click", function(){
-  alert('Number of options chosen: ' + whichOnes(document.musicForm.musicians))
-});
 </script>
- </body>
- </html>
+</head>
+<body>
+<p>Type in any number and I will add all of the odd numbers up to that number</p>
+<input id="inputBox" name="number" type="text" size="9" onfocus="if (this.value = 'number') {this.value = '';}" placeholder="number" style="height:40px;font-size:16pt;font-family: 'Itim', cursive;"/>
+<button type="button" onclick="countNumbers()" style="height:35px;font-size:18pt;;font-family:'Ruthie', cursive">Click Me</button>
+<br>
+<br>
+<div id="output"></div>
+</body>
+</html>
 
