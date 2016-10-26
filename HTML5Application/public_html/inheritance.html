@@ -20,14 +20,25 @@
             h1 {
                 color:black;
             }
-         
+
         </style>
     </head>
     <body>
-       <h1>Parent</h1>
-       <p>Child</p>
-       <p>Notice that whatever element the parent has the child with inherit unless
-       otherwise instructed?</p>
-       
+        <p id="dog"></p>
+        <script>
+            function dog(name, breed){
+                this.name  = name;
+                this.breed = breed;
+            }
+            dog.prototype.sex = "male"
+            
+            var gizmo = new dog("Gizmo", "Shih Tzu");
+            var finn = new dog ("Finn", "Lhasa Apso");
+            document.getElementById("dog").innerHTML = "I am " + gizmo.sex;
+            console.log(gizmo);
+        
+    
+        </script>
+
     </body>
 </html>
