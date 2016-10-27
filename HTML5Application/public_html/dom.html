@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Create a Table From an Array</title>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-color: lightskyblue;
+                align-content: center;
+                font-family: 'Lobster', cursive; color: whitesmoke;
+            }
+            </style>
+    </head>
+    <body>
+        <h1>Here is a list of games</h1>
+        <ul id="gameList"></ul>
+        <p>Click button to add a game to the list</p>
+        <button onclick="addGame()">Add a Game</button><br>
+        <button onclick="removeGame()">Remove the top Game</button>
+        <script>
+        var boardGames = ["Monopoly", "Catan", "Life", "Chutes and Ladders", "Candyland"];
+        for (i=0; i<boardGames.length; i++){
+            var makeList = document.createElement("li");
+            makeList.innerHTML = boardGames[i];
+            document.getElementById("gameList").appendChild(makeList);  
+    }
+    </script>
+    <script>
+        function addGame(){
+            var newGame = document.createElement("li");
+            var text = document.createTextNode("Scrabble");
+            newGame.appendChild(text);
+            var list = document.getElementById("gameList");
+            list.insertBefore(newGame, list.childNodes[0]);
+        }
+        </script>
+        <script>
+            function removeGame(){
+                var remove = document.getElementById("gameList");
+                remove.removeChild(remove.childNodes[0]);
+            }
+        </script>
+    </body>
+</html>
