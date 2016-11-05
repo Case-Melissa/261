@@ -29,6 +29,7 @@ This is my home page
                 <a href="public_html/html5/canvas.html">Canvas</a><br>
                 <a href="public_html/cs.html">Conditional Statements</a><br>
                 <a href="public_html/dom.html">DOM</a><br>
+                <a href="public_html/events.html">Events</a><br>
                 <a href="public_html/inheritance.html">Inheritance</a><br>
                 <a href="public_html/loops.html">Loops</a><br>
                 <a href="public_html/local.html">Local Storage API</a><br>
