@@ -28,6 +28,7 @@ This is my home page
                 <a href="public_html/html5/audio.html">Audio</a><br>
                 <a href="public_html/html5/canvas.html">Canvas</a><br>
                 <a href="public_html/cs.html">Conditional Statements</a><br>
+                <a href="public_html/css_manipulation.html">CSS Class Manipulation</a><br>
                 <a href="public_html/dom.html">DOM</a><br>
                 <a href="public_html/events.html">Events</a><br>
                 <a href="public_html/inheritance.html">Inheritance</a><br>
