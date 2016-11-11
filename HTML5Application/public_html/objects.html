@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Object Creation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+         function Dog (type){
+            this.type = type;
+            this.age = "puppy";
+            this.dogInfo = getDogInfo;
+         }
+         function getDogInfo(){
+             return this.age  + ' '  +  this.type  +  ' puppy ';
+         }
+         var dog = new Dog (' Shih Tzu ');
+         dog.age = " 2 years ";
+         alert(dog.dogInfo());
+        </script> 
+
+
+    </body>
+</html>
