@@ -23,6 +23,7 @@ This is my home page
             </div>
             <div>
                 <a href="public_html/ajax/ajax.html">Ajax</a><br>
+                <a href="public_html/animation.html">Animation</a><br>
                 <a href="public_html/arrays.html">Arrays</a><br>
                 <a href="public_html/associative.html">Associative</a><br>
                 <a href="public_html/html5/audio.html">Audio</a><br>
@@ -34,6 +35,7 @@ This is my home page
                 <a href="public_html/inheritance.html">Inheritance</a><br>
                 <a href="public_html/loops.html">Loops</a><br>
                 <a href="public_html/local.html">Local Storage API</a><br>
+                <a href="public_html/objects.html">Objects</a><br>
                 <a href="public_html/properties.html">Properties</a><br>
                 <a href="public_html/stringify.html">Stringify</a><br>
                 <a href="public_html/html5/video.html">Video</a><br>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Animation and Transition</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline" rel="stylesheet">
+        <link rel="stylesheet" href="animation.css">
+      <script>
+            window.addEventListener("load", shapeEvents, false);
+            function shapeEvents(e) {
+                document.getElementById("stop").addEventListener("click", stopAnim, false);
+                document.getElementById("go").addEventListener("click", startAnim, false);
+            }
+            function stopAnim() {
+                document.getElementById("shape").style.webkitAnimationPlayState = "paused";
+                document.getElementById("shape").style.AnimationPlayState = "paused";
+            }
+            function startAnim() {
+                document.getElementById("shape").style.webkitAnimationPlayState = "running";
+                document.getElementById("shape").style.AnimationPlayState = "running";
+            }
+        </script>
+    </head>
+    <body>
+        
+      
+        <p id="shape">I'm a Shape.</p>
+        <button type="button" id="stop">Stop</button>
+        <button type="button" id="go">Start</button>
+    </body>
+</html>
