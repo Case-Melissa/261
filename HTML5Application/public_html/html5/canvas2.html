@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title> Another Canvas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-color: lightskyblue;
+            }
+            input{
+                position:absolute;
+                top:55%;
+                left:10%;
+                size:30px;
+            }
+           
+        </style>
+    </head>
+    <body onload="canv()">
+        <canvas id="can" width="400" height="300" style=" background-color:white; position:absolute;top:10%;left:10%;border:2px solid;"></canvas><br>
+       
+        <input type="button" value="erase" id="clr" onclick="erase()">
+        <br><br>
+        <br>
+        <script src="canvas2.js"></script>
+
+
+    </body>
+</html>
