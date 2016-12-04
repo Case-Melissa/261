@@ -9,15 +9,25 @@ and open the template in the editor.
         <title>CSS Class Manipulation</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       
+
     </head>
     <body>
-        <p id="p"> This is a paragraph to demonstrate CSS  class manipulation. Once the button 
-        is clicked the paragraph features will change. The font color, size and 
-        background will be changed. </p>
-       
-        <button type="button" onclick="document.getElementById('p').style.color = 'white', document.getElementById('p').style.background ='purple', document.getElementById('p').style.fontSize = '350%'">
-        Click Here!</button>
-         
+        <p id="p" class="p"> This is a paragraph to demonstrate CSS class manipulation. Once the button 
+            is clicked the paragraph features will change. The font color, size and 
+            background will be changed. </p>
+
+        <button type="button" onclick="document.getElementsByClassName('p').style.color = 'white', document.getElementsByClassName('p').style.background = 'purple', document.getElementsByClassName('p').style.fontSize = '350%'">
+            Click Here!</button>
+        <script>
+function toggle(){
+    var t = document.getElementsByClassName("p");
+    if(t.style.color === "white" ){
+        t.style.background = 'purple';
+    }else {
+        t.style.color = 'red';
+    }
+    
+}
+        </script>
     </body>
 </html>

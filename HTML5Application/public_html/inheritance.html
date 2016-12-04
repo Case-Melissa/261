@@ -26,15 +26,30 @@
     <body>
         <p id="dog"></p>
         <script>
-            function dog(name, breed){
+            function Animal(name, breed, type){
                 this.name  = name;
                 this.breed = breed;
+                this.type=[];
             }
-            dog.prototype.sex = "male"
-            
-            var gizmo = new dog("Gizmo", "Shih Tzu");
-            var finn = new dog ("Finn", "Lhasa Apso");
-            document.getElementById("dog").innerHTML = "I am " + gizmo.sex;
+            Animal.prototype.dog=function(){
+                var newPet = new Animal("Pet"+this.name);
+                this.type.push(newPet);
+                return newPet;
+            }
+            Animal.prototype.toString=function(){
+                return '[Animal "'+this.name+'"]';
+            }
+            Cat.prototype = new Animal();
+            Cat.prototype.constructor=Cat;
+            function Cat(name){
+                this.name=name;
+            }
+            Cat.prototype.toString=function(){
+                return '[Cat "'+this.name+'"]';
+            }
+            var gizmo = new Animal("Gizmo", "Shih Tzu");
+            var finn = new Cat ("Finn", "short-hair");
+            document.getElementById("dog").innerHTML = "I am " + finn;
             console.log(gizmo);
         
     

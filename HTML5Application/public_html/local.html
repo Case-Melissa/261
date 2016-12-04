@@ -10,25 +10,25 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body id="a">
         <script>
-            if (window.localStorage){
+            if (window.localStorage) {
                 var textuser = document.getElementById('name');
                 var textemail = document.getElementById('email');
-                
+
                 textuser.value = localStorage.getItem('name');
                 textemail.value = localStorage.getItem('email');
-                
-                textuser.addEventListener('input', function(){
+
+                textuser.addEventListener('input', function () {
                     localStorage.setItem('name', textuser.value);
                 }, false);
-                
-                textemail.addEventListener('input', function(){
+
+                textemail.addEventListener('input', function () {
                     localStorage.setItem('email', textemail.value);
                 }, false);
             }
         </script>
-        
+
         <form id="form">
             <label for="name">Name: </label>
             <input type="text" id="name" name="name" /><br>
@@ -36,5 +36,21 @@ and open the template in the editor.
             <input type="text" id="email" name="email"/> <br>
             <input type="submit"/>
         </form>
+        <script>
+            if (window.localStorage){
+                var fam = {};
+                fam.dad = "Brian";
+                fam.mom = "Melissa";
+                fam.son = "Matthew";
+                fam.daughter = "Chloe";
+                
+                localStorage.setItem("family", JSON.stringify("fam"));
+                var listFamily = localStorage.getItem("fam");
+                if (listFamily) {
+                    fam = JSON.parse(listFamily);
+                }
+            }
+            document.getElementById("a").innerHTML = JSON.parse(fam);
+        </script>
     </body>
 </html>

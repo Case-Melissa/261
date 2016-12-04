@@ -35,16 +35,16 @@ and open the template in the editor.
     animation-play-state: running;
 }
 @-webkit-keyframes moveshape {
-    0% {background: pink; left:100px; top:0px;}
-    25% {background: cyan; left:200px; top: 100px;}
-    50% {background: crimson; left:300px; top: 200px;}
-    75% {background: chocolate; left:200px; top: 100px;}
-    100% {background: gainsboro; left:100px; top: 0px;}
+    0% {background: pink; left:0px; top:0px;}
+    25% {background: cyan; left:0px; top: 100px;}
+    50% {background: crimson; left:0px; top: 200px;}
+    75% {background: chocolate; left:0px; top: 100px;}
+    100% {background: gainsboro; left:0px; top: 0px;}
 }
 @keyframes moveshape {
-    0% {background: pink; left:100px; top:0px;}
-    25% {background: cyan; left:200px; top: 100px;}
-    50% {background: crimson; left:300px; top: 200px;}
-    75% {background: chocolate; left:200px; top: 100px;}
-    100% {background: gainsboro; left:100px; top: 0px;}
+    0% {background: pink; left:0px; top:0px;}
+    25% {background: cyan; left:0px; top: 100px;}
+    50% {background: crimson; left:100px; top: 100px;}
+    75% {background: chocolate; left:100px; top: 000px;}
+    100% {background: gainsboro; left:0px; top: 0px;}
 }
