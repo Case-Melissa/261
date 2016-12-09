@@ -10,21 +10,21 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body id="a">
+    <body>
         <script>
             if (window.localStorage) {
-                var textuser = document.getElementById('name');
-                var textemail = document.getElementById('email');
+                var user = document.getElementById('name');
+                var email = document.getElementById('email');
 
-                textuser.value = localStorage.getItem('name');
-                textemail.value = localStorage.getItem('email');
+                user.value = localStorage.getItem('name');
+                email.value = localStorage.getItem('email');
 
-                textuser.addEventListener('input', function () {
-                    localStorage.setItem('name', textuser.value);
+                user.addEventListener('input', function () {
+                    localStorage.setItem('name', user.value);
                 }, false);
 
-                textemail.addEventListener('input', function () {
-                    localStorage.setItem('email', textemail.value);
+                email.addEventListener('input', function () {
+                    localStorage.setItem('email', email.value);
                 }, false);
             }
         </script>
@@ -36,6 +36,7 @@ and open the template in the editor.
             <input type="text" id="email" name="email"/> <br>
             <input type="submit"/>
         </form>
+        
         <script>
             if (window.localStorage){
                 var fam = {};
@@ -50,7 +51,7 @@ and open the template in the editor.
                     fam = JSON.parse(listFamily);
                 }
             }
-            document.getElementById("a").innerHTML = JSON.parse(fam);
+            console.log(fam);
         </script>
     </body>
 </html>
