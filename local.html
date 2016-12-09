@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Local Storage API</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            if (window.localStorage) {
+                var user = document.getElementById('name');
+                var email = document.getElementById('email');
+
+                user.value = localStorage.getItem('name');
+                email.value = localStorage.getItem('email');
+
+                user.addEventListener('input', function () {
+                    localStorage.setItem('name', user.value);
+                }, false);
+
+                email.addEventListener('input', function () {
+                    localStorage.setItem('email', email.value);
+                }, false);
+            }
+        </script>
+
+        <form id="form">
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" /><br>
+            <label for="email">Email: </label>
+            <input type="text" id="email" name="email"/> <br>
+            <input type="submit"/>
+        </form>
+        
+        <script>
+            if (window.localStorage){
+                var fam = {};
+                fam.dad = "Brian";
+                fam.mom = "Melissa";
+                fam.son = "Matthew";
+                fam.daughter = "Chloe";
+                
+                localStorage.setItem("family", JSON.stringify("fam"));
+                var listFamily = localStorage.getItem("fam");
+                if (listFamily) {
+                    fam = JSON.parse(listFamily);
+                }
+            }
+            console.log(fam);
+        </script>
+    </body>
+</html>
