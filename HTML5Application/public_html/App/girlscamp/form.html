@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Girls Camp Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="form.css">
+        
+        <script src="canvas1.js"></script>
+    </head>
+    <body>
+        <p class="title">Sparks Nevada East Stake Girls Camp Form</p>
+        <div id="back"></div>
+        <div id="for">
+            <form method="post" onsubmit="return submitForm(); return reset()" action="" target="forms.html" id="forms">
+                <label for="fname">First Name: </label>
+                <input type="text" id="fname" name="fname" class="stored" value="" required><br>
+                <label for="lname">Last Name: </label>
+                <input type="text" id="lname" name="lname" class="stored" value="" required><br>
+                <label for="email">Email Address: </label>
+                <input type="email" id="email" name="email" class="stored" value="" required><br>
+                <label for="address"> Address: </label>
+                <input type="text" id="address" name="address" class="stored" value="" required><br>
+                <label for="city">City: </label>
+                <input type="text" id="city" name="city" class="stored" value="" required><br>
+                <label for="state">State: </label>
+                <input type="text" id="state" name="state" class="stored" value=""><br>
+                <label for="zip">Zip Code: </label>
+                <input type="number" id="zip"  name="zip" class="stored" value="" required><br>
+                <label for="year">Year at Camp: </label>
+                <input type="number" id="year" name="year" class="stored" value="" required><br><br>
+                <input type="submit" id="submit" value="submit" onclick="canSign.image()">
+          
+            </form>
+        </div>
+            
+			<p> I agree to comply with the rules of girls camp.</p>
+			<div id="canvas">Canvas is not supported.</div>
+
+			<script>canSign.get();</script>
+
+			<button type="button" onclick="canSign.delete()">Clear Signature</button>
+                        
+			<img id="saved" alt="Saved image png"/>
+			
+           
+		
+            <script>
+            if (window.localStorage) {
+                var first = document.getElementById('fname');
+                var last = document.getElementById('lname');
+                var email = document.getElementById('email');
+                var add = document.getElementById('address');
+                var city = document.getElementById('city');
+                var state = document.getElementById('state');
+                var zip = document.getElementById('zip');
+                var yac = document.getElementById('year');
+
+                first.value = localStorage.getItem('fname');
+                last.value = localStorage.getItem('lname');
+                email.value = localStorage.getItem('email');
+                add.value = localStorage.getItem('address');
+                city.value = localStorage.getItem('city');
+                state.value = localStorage.getItem('state');
+                zip.value = localStorage.getItem('zip');
+                yac.value = localStorage.getItem('year');
+
+                first.addEventListener('input', function () {
+                    console.log(localStorage.setItem('fname', first.value));
+                }, false);
+
+                last.addEventListener('input', function () {
+                    console.log(localStorage.setItem('lname', last.value));
+                }, false);
+
+                email.addEventListener('input', function () {
+                    console.log(localStorage.setItem('email', email.value));
+                }, false);
+
+                add.addEventListener('input', function(){
+                   console.log(localStorage.setItem('address', add.value)); 
+                }, false);
+
+                city.addEventListener('input', function() {
+                    console.log(localStorage.setItem('city', city.value));
+                }, false);
+
+                state.addEventListener('input', function (){
+                    console.log(localStorage.setItem('state', state.value));
+                }, false);
+
+                zip.addEventListener('input', function() {
+                    console.log(localStorage.setItem('zip', zip.value));
+                }, false);
+        
+                yac.addEventListener('input', function() {
+                    console.log(localStorage.setItem('year', yac.value));
+                }, false);
+          }
+            function submitForm() {
+                var s = document.forms["form"]["fname"]["lname"]["email"]["address"]["city"]["state"]["zip"]["year"].value;
+                if (s === "") {
+                    alert("All data is required!");
+                    return false;
+                } else
+                    return s;
+            }
+            function reset() {  
+                document.getElementById("forms").value = "";
+            }
+                    </script><br>
+                    <div>
+                    <button type="button" onclick="location.href='index.html'" value="Back">Back</button><br>
+                    </div>
+                    </body>
+</html>

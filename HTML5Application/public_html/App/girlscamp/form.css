@@ -1,0 +1,174 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 3, 2016, 7:48:14 AM
+    Author     : Melissa Case
+*/
+@import url('https://fonts.googleapis.com/css?family=Irish+Grover');
+
+div#back{
+    background-image: url("https://images-na.ssl-images-amazon.com/images/I/41PRX-IaRVL._SY300_QL70_.jpg");
+    background-repeat: repeat;
+    opacity: 0.2;
+    width: 550px;
+    height: 500px;
+}
+div#for{
+    width: 400px;
+    height:300px;
+    position: absolute;
+    top:100px;
+    left:10px;
+}
+div#camp{
+    background-image: url(star.png);
+    width: 510px;
+    height: 510px;
+    position: absolute;
+    background-repeat:no-repeat;
+    background-position:center;
+    padding-left: 150px;
+    opacity: 0.8;
+}
+
+div#theme{
+    width: 700px;
+    height: 1000px;
+    position: absolute;
+    background-position: center;
+}
+
+#result {
+    background:#998100;
+    height: 400px;
+    overflow: auto;
+    width: 500px;
+    opacity: 0.2;
+    color: white;
+}
+.title{
+    -ms-transform: rotate(-2deg);
+    -webkit-transform: rotate(-2deg); 
+    transform: rotate(-2deg);
+    background-color: #998100;
+    color: white;
+    width: 400px;
+    height: 50px;
+    font-size: 22px;
+    font-family: 'Irish Grover', cursive;
+    text-align: center;
+    padding-top: 10px;
+}
+
+ul{
+    border: dotted goldenrod 2px;   
+}
+
+canvas{
+    position:relative;
+    top:55%;
+    size:30px;
+    color:black;
+}
+
+canvas.canvas{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+}
+
+body{
+    background-color: lightgoldenrodyellow;
+}
+td{
+    width: 50%;
+    height: auto;
+    background-color: dimgray;
+    border: 1px solid;
+    font-family: 'Irish Grover', cursive, white;
+    text-align: center;
+    color: white;
+    padding: 50px;
+    font-size: 28px;
+    align-self: center; 
+    margin-left: 200px;
+}
+img{
+    height: 320px;
+    width: 320px;
+    display: block;
+    margin: 0 auto;
+}
+img:hover {
+    margin-top: 200px;
+    -webkit-transform: scale(2.5,2);
+    -ms-transform: scale(2.5,2);
+}
+
+button{
+    display: inline-block;
+    align-self: center;
+}
+video{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+audio{
+    display: block;
+    margin: 0 auto;
+}
+
+table{
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    height: auto;
+}
+
+white{
+    background: white;
+}
+
+.blue{
+    background:lightskyblue !important;
+    color: black !important;
+}
+
+p, h1, h2{
+    font-family: 'Irish Grover', cursive;
+    color: slateblue;
+    text-align: center;
+}
+
+.break{
+    margin-top: 150px;
+}
+
+.theme {
+    -webkit-animation: spin 30s infinite linear;
+    animation: spin 30s infinite linear;
+}
+
+@-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    100% { -moz-transform: rotate(360deg); }
+}
+@keyframes spin {
+    100% {
+        -moz-transform:rotate(360deg);
+        -o-transform:rotate(360deg);
+        transform:rotate(360deg);
+    }
+}
+@media all and (min-width: 320px) and (max-width: 780px) {
+}

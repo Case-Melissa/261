@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Question 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../personality.css">
+        <link href="https://fonts.googleapis.com/css?family=Cherry+Cream+Soda" rel="stylesheet">
+
+    </head>
+    <body>
+        <p>Please rank these four words in order of importance to you. 
+            Where the top is most important and bottom is least important. 
+            If you have two words which match closely, do not hesitate. 
+            Select the word that comes to mind first.</p>
+
+        <ul id="q">
+            <li draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)"  class="d" id="likes_authority">likes authority</li>
+            <li draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)"  class="i" id="enthusiastic">enthusiastic</li>
+            <li draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)"  class="s" id="sensitive">sensitive</li>
+            <li draggable="true" ondragstart="dragStart(event)" ondragover="dragOver(event)" ondrop="drop(event)"  class="c" id="likes_instruction">likes instruction</li>
+        </ul>
+        <script>
+            var src;
+
+            function dragStart(event) {
+                src = event.target;
+                event.dataTransfer.setData("text/plain", event.target.innerHTML);
+                event.dataTransfer.effectAllowed = "move";
+            }
+            function dragOver(event) {
+                event.preventDefault();
+                event.dataTransfer.dropEffect = "move";
+            }
+            function drop(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                src.innerHTML = event.target.innerHTML;
+                event.target.innerHTML = event.dataTransfer.getData("text/plain");
+            }
+        </script>
+        <script>
+            
+        </script>
+
+        <input type="button" name="prev" value="prev" onclick="location.href = 'test.html'">
+        <input type="button" name="next" value="next" style="float: right" onclick="location.href = 'test2.html'">
+    </body>
+</html>

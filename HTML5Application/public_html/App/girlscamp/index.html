@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Camp Web Site</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="form.css">
+    </head>
+    <body>
+        
+        <h1>Welcome to the Sparks Nevada East Stake Girls Camp Page!</h1>
+        <p>Please click on a tab to get more information:</p>
+        <table>
+            <tr>
+                <td class="white" onclick="place(this); location.href='photos.html'">Camp Photos</td>
+                <td class="white" onclick="place(this); location.href='user.html'">Camp Form</td>
+            </tr>
+            <tr>
+                <td class="white" onclick="place(this); location.href='video.html'">Camp Videos</td>
+                <td class="white" onclick="place(this); location.href='theme.html'">Camp Theme</td>
+            </tr>
+        </table>
+        <script>
+            function place(dom) {
+ dom.classList.toggle("blue");
+}
+        </script>
+    </body>
+</html>

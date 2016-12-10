@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Color Chooser</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="event.css">
+    </head>
+    <body>
+        <p>Pick a color:</p><br>
+        <select id="color" name="colors"
+                onchange="this.className=this.options[this.selectedIndex].className">
+            <option class="white"  value="selectColor">Select A Color</option>
+            <option class="blue"   value="blue">Blue</option>
+            <option class="red"    value="red">Red</option>
+            <option class="green"  value="green">Green</option>
+            <option class="yellow" value="yellow">Yellow</option>
+            <option class="orange" value="orange">Orange</option>
+            <option class="purple" value="purple">Purple</option>
+        </select>
+        <button onclick="chooseColor()">Which did you Choose?</button>
+        
+        <p id="mine"></p>
+        <script>
+            function chooseColor(){
+             var colored = document.getElementById("color").value;
+        document.getElementById("mine").innerHTML = "You chose: " + colored;  
+        addEventListener('touchstart', chooseColor, false);
+    }
+        </script>
+        <br>
+        <br>
+        <br>
+        <pre>
+             <font onmouseover="this.style.color='pink';" onmouseout="this.style.color='black';"> Change Colors</font>
+        </pre>
+        
+        
+    </body>
+</html>
