@@ -10,47 +10,36 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="form.css">
-        
-        <script src="canvas1.js"></script>
+
+
     </head>
     <body>
         <p class="title">Sparks Nevada East Stake Girls Camp Form</p>
         <div id="back"></div>
         <div id="for">
-            <form method="post" onsubmit="return submitForm(); return reset()" action="" target="forms.html" id="forms">
+            <form method="post" onsubmit="return submitForm()" action="" target="_self" id="forms">
                 <label for="fname">First Name: </label>
-                <input type="text" id="fname" name="fname" class="stored" value="" required><br>
+                <input type="text" id="fname" name="fname" class="stored" value=""  placeholder="First Name" required><br>
                 <label for="lname">Last Name: </label>
-                <input type="text" id="lname" name="lname" class="stored" value="" required><br>
+                <input type="text" id="lname" name="lname" class="stored" value="" placeholder="Last Name" required><br>
                 <label for="email">Email Address: </label>
-                <input type="email" id="email" name="email" class="stored" value="" required><br>
+                <input type="email" id="email" name="email" class="stored" value="" placeholder="Email Address" required><br>
                 <label for="address"> Address: </label>
-                <input type="text" id="address" name="address" class="stored" value="" required><br>
+                <input type="text" id="address" name="address" class="stored" value="" placeholder="Address" required><br>
                 <label for="city">City: </label>
-                <input type="text" id="city" name="city" class="stored" value="" required><br>
+                <input type="text" id="city" name="city" class="stored" value="" placeholder="City" required><br>
                 <label for="state">State: </label>
-                <input type="text" id="state" name="state" class="stored" value=""><br>
+                <input type="text" id="state" name="state" class="stored" value="" placeholder="State" required><br>
                 <label for="zip">Zip Code: </label>
-                <input type="number" id="zip"  name="zip" class="stored" value="" required><br>
+                <input type="number" id="zip"  name="zip" class="stored" value="" placeholder="Zip" required><br>
                 <label for="year">Year at Camp: </label>
-                <input type="number" id="year" name="year" class="stored" value="" required><br><br>
-                <input type="submit" id="submit" value="submit" onclick="canSign.image()">
-          
+                <input type="number" id="year" name="year" class="stored" value=""  placeholder="Year at Camp" required><br><br>
+                <button type="submit" id="submit" value="submit">Submit</button>
+
             </form>
         </div>
-            
-			<p> I agree to comply with the rules of girls camp.</p>
-			<div id="canvas">Canvas is not supported.</div>
-
-			<script>canSign.get();</script>
-
-			<button type="button" onclick="canSign.delete()">Clear Signature</button>
-                        
-			<img id="saved" alt="Saved image png"/>
-			
-           
-		
-            <script>
+        
+        <script>
             if (window.localStorage) {
                 var first = document.getElementById('fname');
                 var last = document.getElementById('lname');
@@ -69,7 +58,7 @@ and open the template in the editor.
                 state.value = localStorage.getItem('state');
                 zip.value = localStorage.getItem('zip');
                 yac.value = localStorage.getItem('year');
-
+                
                 first.addEventListener('input', function () {
                     console.log(localStorage.setItem('fname', first.value));
                 }, false);
@@ -101,21 +90,24 @@ and open the template in the editor.
                 yac.addEventListener('input', function() {
                     console.log(localStorage.setItem('year', yac.value));
                 }, false);
-          }
+            }
+          
             function submitForm() {
-                var s = document.forms["form"]["fname"]["lname"]["email"]["address"]["city"]["state"]["zip"]["year"].value;
-                if (s === "") {
-                    alert("All data is required!");
-                    return false;
-                } else
-                    return s;
-            }
-            function reset() {  
-                document.getElementById("forms").value = "";
-            }
-                    </script><br>
-                    <div>
-                    <button type="button" onclick="location.href='index.html'" value="Back">Back</button><br>
-                    </div>
-                    </body>
+                var s = document.getElementById("forms");
+                var dis = "";
+                var a;
+                for (a = 0; a < s.length; a++) {
+                    dis += s.elements[a].value + " ";
+                }
+                
+            
+               alert(document.getElementById("forms").innerHTML = fname.value + "  " + lname.value + " you have registered!");
+           }
+        </script>
+       
+        <div>
+            <button type="button" onclick="location.href = 'index.html'" value="Back">Back</button><br>
+            
+        </div>
+    </body>
 </html>

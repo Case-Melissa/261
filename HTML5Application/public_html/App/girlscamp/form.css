@@ -8,13 +8,14 @@ and open the template in the editor.
     Author     : Melissa Case
 */
 @import url('https://fonts.googleapis.com/css?family=Irish+Grover');
+@import url('https://fonts.googleapis.com/css?family=Aref+Ruqaa');
 
 div#back{
     background-image: url("https://images-na.ssl-images-amazon.com/images/I/41PRX-IaRVL._SY300_QL70_.jpg");
     background-repeat: repeat;
     opacity: 0.2;
     width: 550px;
-    height: 500px;
+    height: 300px;
 }
 div#for{
     width: 400px;
@@ -23,6 +24,7 @@ div#for{
     top:100px;
     left:10px;
 }
+
 div#camp{
     background-image: url(star.png);
     width: 510px;
@@ -30,15 +32,22 @@ div#camp{
     position: absolute;
     background-repeat:no-repeat;
     background-position:center;
-    padding-left: 150px;
-    opacity: 0.8;
+    padding-left: 255px;
 }
-
 div#theme{
     width: 700px;
-    height: 1000px;
+    height: 800px;
     position: absolute;
+    padding-left: 50px;
     background-position: center;
+}
+
+div#campMap {
+    position: relative;
+    top: 45%;
+    height: 400px;
+    width: 85%;
+    color: gray;
 }
 
 #result {
@@ -67,29 +76,14 @@ ul{
     border: dotted goldenrod 2px;   
 }
 
-canvas{
-    position:relative;
-    top:55%;
-    size:30px;
-    color:black;
-}
-
-canvas.canvas{
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-
-}
 
 body{
     background-color: lightgoldenrodyellow;
 }
 td{
-    width: 50%;
-    height: auto;
-    background-color: dimgray;
+    width: 80px;
+    height: 80px;
+    background-color:dimgray;
     border: 1px solid;
     font-family: 'Irish Grover', cursive, white;
     text-align: center;
@@ -99,29 +93,45 @@ td{
     align-self: center; 
     margin-left: 200px;
 }
+button{
+   
+    font-family: 'Aref Ruqaa', serif;
+    background-color:cornflowerblue;
+    color:white;
+    font-size: 22px;
+}
+div.space{
+    padding-top: 500px;
+    clear:both;
+}
+
+button#left{
+    float:left;
+    position:absolute;
+}
+
+button#right{
+    float:right;
+    position:absolute;
+}
+
 img{
-    height: 320px;
-    width: 320px;
+    height: 450px;
+    width: 400px;
     display: block;
     margin: 0 auto;
 }
-img:hover {
+div#photos img.photos:hover {
     margin-top: 200px;
     -webkit-transform: scale(2.5,2);
     -ms-transform: scale(2.5,2);
 }
 
-button{
-    display: inline-block;
-    align-self: center;
+button#right {
+    float: right;
+    position: inherit;
 }
 video{
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-}
-
-audio{
     display: block;
     margin: 0 auto;
 }
@@ -129,8 +139,6 @@ audio{
 table{
     margin-right: auto;
     margin-left: auto;
-    width: 50%;
-    height: auto;
 }
 
 white{
@@ -142,17 +150,18 @@ white{
     color: black !important;
 }
 
-p, h1, h2{
+p, h1, h2 {
     font-family: 'Irish Grover', cursive;
     color: slateblue;
     text-align: center;
 }
 
-.break{
-    margin-top: 150px;
+ h3{
+    font-family: 'Aref Ruqaa', serif;
+    color: slategray;
+    text-align: center;
 }
-
-.theme {
+.camp {
     -webkit-animation: spin 30s infinite linear;
     animation: spin 30s infinite linear;
 }
@@ -170,5 +179,14 @@ p, h1, h2{
         transform:rotate(360deg);
     }
 }
+div.break audio#camp{
+    margin-top: 150px;
+    display: block;
+    position: relative;
+}
+
+
+
+
 @media all and (min-width: 320px) and (max-width: 780px) {
 }

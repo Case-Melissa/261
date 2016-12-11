@@ -6,70 +6,43 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Sign-up for Camp</title>
+        <title>Camp Map</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="form.css">
     </head>
     <body>
+        <h1>Buck's Lake California Map</h1>
+        <div id="campMap"></div>
         <script>
-            if (window.localStorage) {
-                var textuser = document.getElementById('uname');
-                var textpass = document.getElementById('password');
+            function aMap() {
 
-                textuser.value = localStorage.getItem('uname');
-                textpass.value = localStorage.getItem('password');
+                var mapLoc ={lat:39.897471, lng:-121.217926};
 
-                textuser.addEventListener('input', function () {
-                    localStorage.setItem('uname', textuser.value);
-                }, false);
+                var map = new google.maps.Map(document.getElementById("campMap"), {
+                    center:mapLoc,
+                    zoom:18
+                });
+                var content = '<div id=amp>' + '</div>' +
+                        '<p><strong>Amphitheater</strong>, Here is the girls camp amphitheater where flag \n\
+      ceremonies take place both morning and evening.</p>'
+var info = new google.maps.InfoWindow({
+    content:content
+});
 
-                textpass.addEventListener('input', function () {
-                    localStorage.setItem('password', textpass.value);
-                }, false);
+                var camp = new google.maps.Marker({
+                    position:mapLoc,
+                    map:map,
+                    title:'Sparks Nevada East Stake Girls Camp'
+                });
+                camp.addListener('click', function(){
+                    info.open(map, camp);
+                });
             }
-            
-            function submitForm() {
-         var s = document.forms["form"]["uname"]["password"].value;
-         if (s === ""){
-             alert("All data is required!");
-             return false;
-         }
-            
-        if(form.password.value == form.uname.value) {
-        alert("Error: Password must be different from Username!");
-        form.password.focus();
-        return false;
-      }
-      re = /[0-9]/;
-      if(!re.test(form.password.value)) {
-        alert("Error: password must contain at least one number (0-9)!");
-        form.password.focus();
-        return false;
-      }
-      re = /[a-z]/;
-      if(!re.test(form.password.value)) {
-        alert("Error: password must contain at least one lowercase letter (a-z)!");
-        form.password.focus();
-        return false;
-      }
-      re = /[A-Z]/;
-      if(!re.test(form.password.value)) {
-        alert("Error: password must contain at least one uppercase letter (A-Z)!");
-        form.password.focus();
-        return false;
-      }
-            }
-   
-     
+           
         </script>
-        <p id="p">Please create a user name and password to begin signing up for girls camp.</p>
-        <form id="form" method="post" onsubmit="return submitForm()" action="form.html">
-            <label for="uname">Username: </label>
-            <input type="text" id="uname" name="uname" required><br>
-            <label for="password">Password: </label>
-            <input type="password" id="password" name="password" required> <br>
-            <input type="submit" value="submit">
-        </form>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAR6r6bgLP0uo3FKd5ZD32qbUHVR0IlFu8&callback=aMap"></script>
+
+<button type="button" onclick="location.href = 'index.html'" value="Back">Back</button>
     </body>
 </html>
